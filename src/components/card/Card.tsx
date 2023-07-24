@@ -10,6 +10,11 @@ export const Card = styled.div`
   border-radius: .7rem;
   width: 35rem;
   height: 35rem;
+
+  @media screen and (max-width: 920px) {
+    width: 25rem;
+    height: 28rem;
+  }
 `
 
 export const CardHeader = styled.header`
