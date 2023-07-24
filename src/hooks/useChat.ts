@@ -31,15 +31,17 @@ export const useChat: UseChat = () => {
   }
 
   const handleSendMessage = (): void => {
-    dispatch(setChats([
-      ...chats,
-      {
-        id: String(Number(chats[chats.length - 1]?.id ?? 0) + 1),
-        message,
-        isLink: false
-      }
-    ]))
-    setMessage('')
+    if (message.length > 0) {
+      dispatch(setChats([
+        ...chats,
+        {
+          id: String(Number(chats[chats.length - 1]?.id ?? 0) + 1),
+          message,
+          isLink: false
+        }
+      ]))
+      setMessage('')
+    }
   }
 
   const onChange = (event: ChangeEvent<HTMLInputElement>): void => {
